@@ -9,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Hello world action step
-        uses: shrirupa/supreme-memory/.github/workflows/main@master # Uses an action in the root directory
+        uses: shrirupa/supreme-memory@master # Uses an action in the root directory
         id: hello
         with:
           who-to-greet: 'Mona the Octocat'
