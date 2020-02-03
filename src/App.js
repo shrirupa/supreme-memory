@@ -17,14 +17,20 @@ query {
 `;
 function App() {
   const [toDos, settoDos] = useState([]);
+  const [people, setPeople] = useState([]);
   useEffect(() => {
-    let todoData;
-    async function fetchData(){
-    todoData = await API.graphql(graphqlOperation(ListToDos));
-    settoDos(todoData.data.listTodos.items);
-    };
-    fetchData();
-    
+    let todoData, data;
+    // async function fetchData(){
+    // todoData = await API.graphql(graphqlOperation(ListToDos));
+    // settoDos(todoData.data.listTodos.items);
+    // };
+    // fetchData();  
+
+    async function fetchPeopleData(){
+      data = await API.get('peopleapi', '/people')
+      setPeople(data.people);
+    }
+    fetchPeopleData();
 
   }, []);
   return (
@@ -46,6 +52,11 @@ function App() {
       {
         toDos.map((todo,i) => (
           <h1 key={i}>{todo.name}</h1>
+        ))
+      }
+      {
+        people.map((person, i) => (
+          <h2 key={i}>{person.name}</h2>
         ))
       }
     </div>

@@ -1,0 +1,41 @@
+{
+    "paths": [
+        {
+            "name": "/people",
+            "lambdaFunction": "peoplefunction",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            }
+        }
+    ],
+    "resourceName": "peopleapi",
+    "apiName": "peopleapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "peoplefunction"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "amplify-supreme-memory-dev-160709-authRole",
+        "unAuthRoleName": "amplify-supreme-memory-dev-160709-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "peoplefunction",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
