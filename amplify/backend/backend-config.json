@@ -1,0 +1,27 @@
+{
+	"auth": {
+		"supremememory834f2df0": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	},
+	"api": {
+		"supremememory": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "API_KEY",
+						"apiKeyConfig": {
+							"description": "",
+							"apiKeyExpirationDays": 7
+						}
+					}
+				}
+			}
+		}
+	}
+}

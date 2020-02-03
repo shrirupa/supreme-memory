@@ -1,0 +1,20 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-supreme-memory-dev-160709-authRole",
+            "UnauthRoleArn": "arn:aws:iam::547213407654:role/amplify-supreme-memory-dev-160709-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::547213407654:role/amplify-supreme-memory-dev-160709-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-supreme-memory-dev-160709-deployment",
+            "UnauthRoleName": "amplify-supreme-memory-dev-160709-unauthRole",
+            "StackName": "amplify-supreme-memory-dev-160709",
+            "StackId": "arn:aws:cloudformation:us-east-1:547213407654:stack/amplify-supreme-memory-dev-160709/0765d540-4600-11ea-82e2-1251e602a9c6",
+            "AmplifyAppId": "dldxf8x6t6ssa"
+        },
+        "categories": {
+            "auth": {
+                "supremememory834f2df0": {}
+            }
+        }
+    }
+}

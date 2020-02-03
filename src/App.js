@@ -1,8 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import {withAuthenticator} from 'aws-amplify-react';
+import Amplify from 'aws-amplify';
+import {API , graphqlOperation} from 'aws-amplify'
+import config from './aws-exports'
+Amplify.configure(config)
+const ListToDos = `
+query {
+  listTodos{
+    items {
+      id name description completed
+    }
+  }
+}
+`;
 function App() {
+  const [toDos, settoDos] = useState([]);
+  useEffect(() => {
+    let todoData;
+    async function fetchData(){
+    todoData = await API.graphql(graphqlOperation(ListToDos));
+    settoDos(todoData.data.listTodos.items);
+    };
+    fetchData();
+    
+
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
@@ -19,8 +43,13 @@ function App() {
           Learn React
         </a>
       </header>
+      {
+        toDos.map((todo,i) => (
+          <h1 key={i}>{todo.name}</h1>
+        ))
+      }
     </div>
   );
 }
 
-export default App;
+export default withAuthenticator(App);
