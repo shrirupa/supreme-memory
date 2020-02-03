@@ -1,2 +1,2 @@
 # supreme-memory
-Hackathon site to maintain the ideas forever
+A project to try out ideas
